@@ -1,5 +1,14 @@
-node_modules
-.next
-.env.local
+
+# Environment variables / secrets
 .env
-npm-debug.log*
+.env.local
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
