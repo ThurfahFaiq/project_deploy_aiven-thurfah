@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getPool } from '@/lib/db';
 
-// GET /api/products -> list all products
+// READ: GET /api/products -> list all products.
 export async function GET() {
   try {
     const pool = getPool();
@@ -15,7 +15,7 @@ export async function GET() {
   }
 }
 
-// POST /api/products -> create a new product
+// CREATE: POST /api/products -> create a new product.
 export async function POST(request) {
   try {
     const body = await request.json();

@@ -1,8 +1,10 @@
-# CRUD Produk — Next.js + MySQL (Aiven) + Vercel
+# Ruang Katalog — Next.js + MySQL (Aiven) + Vercel
 
-Aplikasi CRUD sederhana (Create, Read, Update, Delete) untuk data "produk",
-dibangun dengan Next.js App Router dan database MySQL, siap deploy ke Vercel
-dengan database di Aiven.
+Aplikasi inventaris produk dengan alur CRUD (Create, Read, Update, Delete),
+dibangun menggunakan Next.js App Router dan MySQL. Antarmuka Ruang Katalog
+menggunakan layout workspace yang ringkas, terinspirasi pola aplikasi
+[Linear](https://linear.app/features), dengan warna alami dan tipografi yang
+mudah dibaca.
 
 ## Struktur Project
 
@@ -10,7 +12,7 @@ dengan database di Aiven.
 app/
   api/products/route.js         -> GET (list), POST (create)
   api/products/[id]/route.js    -> GET (detail), PUT (update), DELETE
-  page.js                       -> Halaman utama (tabel + form)
+  page.js                       -> Dashboard, modal produk, panel detail, pencarian, dan CRUD
   layout.js
   globals.css
 lib/
@@ -63,7 +65,10 @@ Jalankan secara lokal:
 npm run dev
 ```
 
-Buka http://localhost:3000 — kamu akan melihat form tambah produk dan tabel daftar produk.
+Buka http://localhost:3000 — kamu akan melihat dashboard katalog, ringkasan
+inventaris, pencarian, dan daftar produk. Gunakan tombol "Produk baru" untuk
+membuka form modal, atau pilih satu produk untuk membuka panel detail dan
+mengedit atau menghapusnya.
 
 ## 3. Push ke GitHub
 
@@ -94,10 +99,13 @@ Pastikan `.env.local` **tidak** ikut ter-commit (sudah otomatis diabaikan lewat 
 
 ## Fitur
 
-- **Create**: tambah produk baru lewat form (nama, deskripsi, harga)
+- **Create**: tambah produk baru lewat modal (nama, deskripsi, harga)
 - **Read**: daftar semua produk otomatis dimuat saat halaman dibuka
-- **Update**: klik "Edit" pada baris produk untuk mengubah data
-- **Delete**: klik "Hapus" untuk menghapus produk (dengan konfirmasi)
+- **Search**: cari produk berdasarkan nama atau deskripsi
+- **Detail produk**: klik item katalog untuk membuka panel detail di sisi kanan
+- **Update**: edit produk dari panel detail dengan form modal yang sama seperti Create
+- **Delete**: hapus produk dari panel detail setelah konfirmasi
+- **Ringkasan**: hitung jumlah produk, nilai katalog, dan rata-rata harga
 
 ## Catatan
 

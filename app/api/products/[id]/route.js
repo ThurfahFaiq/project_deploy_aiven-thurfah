@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getPool } from '@/lib/db';
 
-// GET /api/products/:id -> get one product
+// READ: GET /api/products/:id -> get one product.
 export async function GET(request, { params }) {
   try {
     const pool = getPool();
@@ -20,7 +20,7 @@ export async function GET(request, { params }) {
   }
 }
 
-// PUT /api/products/:id -> update a product
+// UPDATE: PUT /api/products/:id -> update a product.
 export async function PUT(request, { params }) {
   try {
     const body = await request.json();
@@ -50,7 +50,7 @@ export async function PUT(request, { params }) {
   }
 }
 
-// DELETE /api/products/:id -> delete a product
+// DELETE: DELETE /api/products/:id -> delete a product.
 export async function DELETE(request, { params }) {
   try {
     const pool = getPool();
